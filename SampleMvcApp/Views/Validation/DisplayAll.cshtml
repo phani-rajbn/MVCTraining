@@ -1,0 +1,71 @@
+﻿
+@{
+    Layout = null;
+    List<SelectListItem> courses = new List<SelectListItem>();
+
+    Dictionary<string, string> enrolled = TempData["EnrolledStudents"] != null ?TempData["EnrolledStudents"] as Dictionary<string, string> : new Dictionary<string, string>();
+
+    if (ViewData.ContainsKey("Courses"))
+    {
+        var data = ViewData["Courses"] as List<string>;
+        courses = data.Select(d => new SelectListItem { Text = d }).ToList();
+    }
+
+    List<SampleMvcApp.Models.Student> _students = ViewBag.Records != null ? ViewBag.Records : new List<SampleMvcApp.Models.Student>(); 
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DisplayAll</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div> 
+        <h1 class="h1 jumbotron">Student Course Allocation</h1>
+        <div class="container">
+        <div class="col-md-8">
+        <table class="table table-bordered table-hover" border="1">
+            <tr>
+                <th>Student Name</th>
+                <th>Student Email</th>
+                <th>Student Age</th>
+                <th>Course</th>
+                <th>Option</th>
+            </tr>
+            @foreach(var student in _students)
+            {
+                using (Html.BeginForm("AddCourse", "Validation", FormMethod.Post))
+                {
+                <tr>
+                    <td>@student.Name@Html.Hidden("Name",student.Name)</td>
+                    <td>@student.EmailAddress@Html.Hidden("Email", student.EmailAddress)</td>
+                    <td>@student.Age@Html.Hidden("Age", student.Age) </td>
+                    <td>@Html.DropDownList("Course", courses, new { @class = "form-control" })@Html.Hidden("Course")</td>
+                    <td>
+                    <input class="btn btn-info" type="submit" value="Save"/>
+                    </td>
+                </tr>
+                }
+            }
+        </table>
+            </div>
+            <div class="col-md-3">
+                <h2>List of Enrolled Candidates</h2>
+                <table class="table table-responsive table-bordered">
+                    @foreach(var pair in enrolled)
+                    {
+                        <tr>
+                            <td>@pair.Key</td>
+                            <td>@pair.Value</td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+       </div>
+    </div>
+</body>
+</html>

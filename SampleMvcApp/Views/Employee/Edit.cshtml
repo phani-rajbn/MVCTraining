@@ -1,0 +1,40 @@
+﻿@model SampleMvcApp.Models.EmpTable
+
+@{
+    Layout = null;
+    var depts = ViewBag.Depts as List<SelectListItem>;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Editing the details of Mr.@Model.EmpName</h1>
+    <div> 
+        @using (Html.BeginForm())
+        {
+            <p>
+                Employee ID: @Html.DisplayFor(m=>m.EmpID)
+                @Html.HiddenFor(m => m.EmpID)
+            </p>
+            <p>
+                Employee Name: @Html.EditorFor(m => m.EmpName)
+            </p>
+            <p>
+                Employee Address: @Html.EditorFor(m => m.EmpAddress)
+            </p>
+            <p>
+                Employee Salary: @Html.EditorFor(m => m.EmpSalary)
+            </p>
+            <p>
+                Dept: @Html.DropDownListFor(m=>m.DeptID, depts)
+            </p>
+            <input type="submit"  value="Save Changes" />
+        }
+    </div>
+</body>
+</html>

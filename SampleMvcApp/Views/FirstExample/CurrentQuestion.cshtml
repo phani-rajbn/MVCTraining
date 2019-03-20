@@ -1,0 +1,31 @@
+﻿@model SampleMvcApp.Models.QuestionInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CurrentQuestion</title>
+</head>
+<body>
+    <h1>Question Paper for .NET</h1>
+    <div>
+        <h1><span>@Model.QuestionNo</span>
+        <span>@Model.Question</span>
+        </h1> 
+        @foreach(var choice in Model.Options)
+        {
+            <p>
+                <input type="radio" name="choice"/>
+                @choice
+            </p>
+
+        }
+        <input type="submit" value="Submit" />
+    </div>
+</body>
+</html>

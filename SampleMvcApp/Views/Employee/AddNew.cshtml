@@ -1,0 +1,41 @@
+﻿@model SampleMvcApp.Models.EmpTable
+
+@{
+    Layout = null;
+    var depts = ViewBag.Depts as List<SelectListItem>;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddNew</title>
+</head>
+<body>
+    <h1>Add new Employee</h1>
+    <div> 
+        <div>
+            @using (Html.BeginForm())
+            {
+                <p>
+                    Employee ID: @Html.EditorFor(m => m.EmpID)
+                </p>
+                <p>
+                    Employee Name: @Html.EditorFor(m => m.EmpName)
+                </p>
+                <p>
+                    Employee Address: @Html.EditorFor(m => m.EmpAddress)
+                </p>
+                <p>
+                    Employee Salary: @Html.EditorFor(m => m.EmpSalary)
+                </p>
+                <p>
+                    Dept: @Html.DropDownListFor(m => m.DeptID, depts)
+                </p>
+                <input type="submit" value="Add To Source" />
+            }
+        </div>
+    </div>
+</body>
+</html>

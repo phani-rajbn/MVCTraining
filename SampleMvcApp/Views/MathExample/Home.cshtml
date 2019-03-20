@@ -1,0 +1,45 @@
+﻿@model System.Double
+@{
+    ViewBag.Title = "Welcome to Home Page";
+    Layout = null;
+    var items = new List<SelectListItem>
+    {
+        new SelectListItem { Text ="+" },
+        new SelectListItem { Text ="-" },
+        new SelectListItem { Text ="X" },
+        new SelectListItem { Text ="/" },
+    };
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+</head>
+<body>
+    <h1>@ViewBag.Title</h1>
+    <div>
+        
+        @using (Html.BeginForm())
+        {
+            <p>Enter the First Value: @Html.Editor("FirstValue")</p>
+            <p>Enter the Second Value: @Html.Editor("SecondValue")</p> 
+            <p>Enter the Operation: @Html.DropDownList("Operation", items)</p>
+            <p>
+                <input type="submit" value="Get Result" />
+            </p>
+        }
+        @if (ViewBag.Apple != null)
+        {
+            <p>The Result:@string.Format("{0:##.##}", Model)</p>
+        }
+    </div>
+    <div>
+        @if(ViewBag.Name != null && ViewBag.Address != null)
+        {
+            <span>@ViewBag.Name</span><span>from</span> <span>@ViewBag.Address</span>
+        }
+    </div>
+</body>
+</html>

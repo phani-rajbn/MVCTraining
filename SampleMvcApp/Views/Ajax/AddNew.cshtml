@@ -1,0 +1,10 @@
+﻿@model SampleMvcApp.Models.Article
+@{ 
+    var options = new AjaxOptions { UpdateTargetId = "area", InsertionMode = InsertionMode.Replace };
+}
+@using (Ajax.BeginForm(options))
+{
+    @Html.EditorForModel()
+    <input type="submit" name="name" value="Add Article" />
+}
+

@@ -1,0 +1,8 @@
+ASP.MVC:
+Model: What U see
+View: How U see
+Controller: Manager to handle the requests made by the User to UR App...
+Controller is a Class that implements an interface IController. This controller has methods called Actions. Every URL mapping is done to a specific action. Every Action will return a Result what is called as ActionResult. An ActionResult is an abstract class that has many implementor classes that are specific to the kind of the result they wish to give: ViewResult, PartialViewResult, JsonResult, ContentResult to name a few..
+The job of the Action is to get the data(Model) and inject the data into a View which is found thro ViewEngine and return the View or any of it that is required for UR App requests.
+An Action can return any kind of data that can be represented as String.
+ASP.NET Project, MVC check box for Folder Hierarchy. 

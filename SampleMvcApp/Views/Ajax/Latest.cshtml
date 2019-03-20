@@ -1,0 +1,24 @@
+﻿@model List<SampleMvcApp.Models.Article>
+@{ 
+    var options = new AjaxOptions
+    {
+        UpdateTargetId = "area",
+        InsertionMode = InsertionMode.Replace
+    };
+}
+<table>
+    <tr>
+        <th>Latest News......</th>
+        <th></th>
+    </tr>
+    @foreach (var article in Model)
+    {
+        <tr>
+            <td><h3>@article.Heading</h3></td>
+            <td>@Ajax.ActionLink("....", "Details", new{ id = @article.Heading },options)
+            </td>
+        </tr>
+    }
+
+</table>
+

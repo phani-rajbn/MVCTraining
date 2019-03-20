@@ -1,0 +1,14 @@
+﻿@model SampleMvcApp.Models.Article
+<style>
+    .right{
+        text-align:right;
+        font-style: italic;
+    }
+</style>
+<h1>@Model.Heading</h1>
+<p>@Model.Content</p>
+<div>
+    <span><i>Authored By: @Model.Author</i></span>
+    <p class="right">Date:@Model.PublishedOn.ToString()</p>
+</div>
+

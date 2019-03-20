@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e58bf659-7f72-48ad-9d70-3c92eecffaf2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1234/QuestionBankService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="4916febe-9028-43ed-bd59-2545124d596e" SourceId="1" SourceUrl="http://localhost:1234/QuestionBankService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="1bf78bca-d664-4b7d-863a-533ba6062a6c" SourceId="1" SourceUrl="http://localhost:1234/QuestionBankService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="a506a514-a444-43e2-a05e-8eb366ff842d" SourceId="1" SourceUrl="http://localhost:1234/QuestionBankService/mex" />
+    <MetadataFile FileName="QuestionBankService.xsd" MetadataType="Schema" ID="fd1e3f0b-c6d9-425f-acf9-e96db1271e7a" SourceId="1" SourceUrl="http://localhost:1234/QuestionBankService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="08b0c442-5d89-464e-91b1-5bd4f0038638" SourceId="1" SourceUrl="http://localhost:1234/QuestionBankService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,59 @@
+﻿@model List<SampleMvcApp.Models.EmpTable>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AllEmployees</title>
+    <style>
+        *{
+            background-color:lightcyan;
+            color:blue;
+            padding:3px;
+            margin:3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Home Page</h1>
+    <div>
+        @Html.ActionLink("New Employee", "AddNew")
+    </div>
+    <h3>List of Employees with Us</h3>
+    <div>
+    <div style="display:inline-block;width:55%;vertical-align:top"> 
+        <table border="1">
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Options</th>
+            </tr>
+            @foreach(var emp in Model)
+            {
+                <tr>
+                    <td>@emp.EmpID</td>
+                    <td>@emp.EmpName</td>
+                    <td>
+                        @Html.ActionLink("More", "Edit", new { id = emp.EmpID })
+                        @Html.ActionLink("X", "Delete", new { id = emp.EmpID })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div style="display:inline-block;width:35%;vertical-align:top">
+        @if (ViewData.ContainsKey("Error"))
+        {
+            <p style="color:red;font-size:xx-large">
+                @ViewData["Error"]
+            </p>
+        }
+    </div>
+        </div>
+</body>
+</html>

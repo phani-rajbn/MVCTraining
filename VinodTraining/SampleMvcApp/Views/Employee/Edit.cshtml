@@ -1,0 +1,27 @@
+﻿@model SampleMvcApp.Models.Employee
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Editing Details of Mr.@Model.EmpName</h2>
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.HiddenFor(m => m.EmpID)
+        @Html.DisplayFor(m => m.EmpID)
+    </p>
+    <p>
+       Employee Name: @Html.EditorFor(m => m.EmpName)
+    </p>
+    <p>
+       Employee Address : @Html.EditorFor(m => m.EmpAddress)
+    </p>
+    <p>
+       Employee Salary:  @Html.EditorFor(m => m.EmpSalary)
+    </p>
+    <p>
+        <input type="submit"  value="Save Changes" />
+    </p>
+}
+

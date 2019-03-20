@@ -1,0 +1,12 @@
+﻿@model SampleMvcApp.Models.Employee
+
+@{
+    ViewBag.Title = "AddNew";
+}
+
+<h2>Register New Employee</h2>
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    <input type="submit" name="name" value="Register" />
+}
